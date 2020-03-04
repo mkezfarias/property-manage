@@ -8,7 +8,8 @@ RSpec.describe Property, type: :model do
   it {should validate_presence_of(:pictures)}
 
 describe "associations" do
-  it {is_expected.to belong_to :user} 
+  it {is_expected.to belong_to :landlord} 
+  it {is_expected.to have_one :contract}
 end
 
 end
