@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :properties
 
   has_many :contracts
+  has_many :appointments
   
 end
