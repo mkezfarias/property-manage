@@ -2,7 +2,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @property.type %>
+  <%= @property.kind_of_property %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @property.user %>
+  <%= @property.landlord.first_name %>
 </p>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
