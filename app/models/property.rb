@@ -3,5 +3,5 @@ class Property < ApplicationRecord
   has_one :contract
   has_many :appointments
   has_many :tenants, through: :contract
- # validates :kind_of_property, :title, :address, :map, :pictures, presence: true
+  # validates :kind_of_property, :title, :address, :map, :pictures, presence: true
 end
