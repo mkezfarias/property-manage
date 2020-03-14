@@ -22,7 +22,9 @@
 
 <p>
   <strong>Pictures:</strong>
-  <%= @property.pictures %>
+  <% @property.prop_images.each do |image| %>
+    <%= image_tag(image) %>
+  <% end %>
 </p>
 
 <p>
