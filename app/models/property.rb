@@ -4,4 +4,6 @@ class Property < ApplicationRecord
   has_many :appointments
   has_many :tenants, through: :contract
   # validates :kind_of_property, :title, :address, :map, :pictures, presence: true
+
+  has_many_attached :prop_images
 end
