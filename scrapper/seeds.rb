@@ -1,4 +1,4 @@
-require_relative 'github_spider'
+require_relative 'spider'
 require_relative './../app/models/property'
 
 properties = []
