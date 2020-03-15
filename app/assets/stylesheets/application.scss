@@ -35,7 +35,15 @@
    color: #6c757d !important;
  }
 
-
+.search-form {
+  .form-fields {
+    height: 42px;
+    flex: 0 auto;
+    border: solid 1px #e7b8d3;
+    border-radius: 11px;
+    background-color: #fff8f8;
+  }  
+ }
 
  .logoror {
     height: 40px !important;   
