@@ -1,5 +1,5 @@
 class ChangePropertyPicturesTypeToArray < ActiveRecord::Migration[5.2]
   def change
-    t.string :properties, :pictures, :string, array: true, default: '{}'
+    change_column :properties, :pictures, "varchar[] USING (string_to_array(pictures, ','))"
   end
 end

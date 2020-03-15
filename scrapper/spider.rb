@@ -57,18 +57,19 @@ def scrapper(type, page)
           kind_of_property: type.zero? ? "casa" : "departamento",
           title: clean_text(listing.css('h3').text),
           address: clean_text(listing.css(".ListingCell-KeyInfo-address").text),
-          map: "",
+          map: '',
           rooms: get_number(listing.css(".icon-bedrooms + span")),
           bathrooms: bathrooms ? bathrooms[0].to_i : 1,
           availability: Time.new,
           price: get_price(listing.css(".PriceSection-FirstPrice")),
           fees: 0,
           size: get_number(listing.css(".icon-livingsize + span")),
-          parking: parking ? true : false,
+          parking: parking ? parking : 0,
           pets: false,
           furnished: false,
+          views: 0,
           description: clean_text(description),
-          landlord_id: 0
+          landlord_id: 1
         }
         jobs << job
     end
