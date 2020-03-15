@@ -38,7 +38,7 @@ def scrapper(type, page)
     jobs = Array.new
     job_listing = parsed_page.css('.ListingCell-wrapper')
     job_listing.each_with_index do |listing, index|
-      break if index > 0
+      break if index > 25
         sub_url = listing.css('.js-listing-link')[0].to_h['href']
         if sub_url
           unparsed_sub = HTTParty.get(sub_url)
