@@ -1,5 +1,7 @@
 {
   "name": "property-manage",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "rfs": "^9.0.2"
+  }
 }
