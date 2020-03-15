@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require_relative './../scrapper/spider'
+properties = []
+
+# each iteration adds 50 properties
+# 25 houses and 25 flats
+(1..2).each do |i|
+  properties += scrapper(1, i)
+  properties += scrapper(0, i)
+end
+
+p properties.count
+
+properties.each do |property|
+ new_property = Property.new
+  property.each do |key, val|
+   new_property["#{key}"] = val
+  end
+  new_property.save
+end
