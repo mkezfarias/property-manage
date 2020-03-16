@@ -77,6 +77,13 @@
   color: #ab1993;
   font-size: calc(10px + 3vw) ;
 }
+
+.carousel-main {
+  div {
+    margin: 0 10px 0 10px;
+  }
+}
+
    
 // Variables
 //
@@ -171,16 +178,6 @@ $theme-colors: map-merge(
   ),
   $theme-colors  
 );
-
-
  // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "../node_modules/rfs/scss";
-
-.title-rfs {
-  @include rfs(64);
-  padding-top: .75em;
-  line-height: 1.4;
-  margin: 0;
-}
 
 @import "bootstrap";

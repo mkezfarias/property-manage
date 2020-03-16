@@ -1,6 +1,6 @@
 class LandingPagesController < ApplicationController
   def welcome
-    @latest = Property.last
+    @latests = Property.last(4)
   end
 
   def about

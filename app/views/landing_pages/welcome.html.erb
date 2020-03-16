@@ -46,7 +46,7 @@
 
    <section class="container">
    <h3> Latest listings </h3>
-    <%# @latest.each do |property| %>
-      <%= render 'card' %>
-    <%# end %>
+     <div class="d-flex  justify-content-between bd-highlight">
+    <%= render partial: 'card', collection: @latests %>
+    </div>
    </section>
