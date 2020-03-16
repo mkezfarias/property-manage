@@ -1,0 +1,39 @@
+   
+   <div class="card rounded d-flex mx-1" style="width: 18rem;">
+     <%= link_to card.kind_of_property, property_path(card), class: "ubuntu text-center card-link bg-blueish text-white h7" %>
+     <a href="<%=property_path(card)%>" class="linkk" >
+     
+     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+       <div class="carousel-inner">
+         <div class="carousel-item active" style="height: 150px;">
+
+           <img src="<%= card.pictures.first %>" class="d-block w-100 card-pic" alt="...">
+         </div>
+         <% card.pictures.each do |picture| %>
+           <div class="carousel-item" style="height: 150px;">
+             <img src="<%=picture%>" class="d-block w-100 card-pic" alt="...">
+           </div>
+         <% end %>
+       </div>
+       </a>
+       <span class="bg-blueish text-light p-1 price"> <%= number_to_currency(card.price, strip_insignificant_zeros: true) %> MXN </span>
+     </div>
+     <div class="card-body">
+       <a href="<%=property_path(card)%>" ><h5 class="card-title h6"><%= card.title[0..40] %>...</h5></a>
+       <p class="card-text card-txt-format h7"><%= card.description[0..105] %>... <%= link_to "Ver mas", property_path(card) %></p>
+     </div>
+     <ul class="list-group list-group-flush">
+      <li class="list-group-item h7 text-center"><%= card.address %></li>
+      <li class="list-group-item d-flex justify-content-around h7">
+        <span>Rooms: <%= card.rooms %> </span> 
+        <span>Bathrooms: <%= card.bathrooms %> </span> 
+        <span>Size: <%= card.size %> m2 </span>
+      </li>
+     </ul>
+     <div class="card-body text-center">
+       <a href="#" class="h7 card-link"> Mark as Favorite </a>
+       <a href="#" class="h7 card-link"> Hide listing </a>
+     </div>
+   </div>
+
+  <%# end %>
