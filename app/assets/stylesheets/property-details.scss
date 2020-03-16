@@ -35,12 +35,14 @@ body {
   display: grid;
   grid-template-columns: 615px repeat(2, 305px);
   grid-template-rows: repeat(2, 202px);
+  grid-gap: 2px;
 }
 
 .pictures figure {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .pictures figure:first-child {
@@ -50,8 +52,34 @@ body {
 
 figure img {
   height: 100%;
+  transform-origin: center;
+  transition: 0.3s ease-out;
+  cursor: pointer;
 }
 
+.more-images-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000044;
+  z-index: 10;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures img:hover, .pictures .more-images-cover:hover + img {
+  transform: scale(1.1);
+}
+
+aside {
+  width: 100%;
+}
 .pictures {
   margin: 24px 0;
 }
@@ -171,4 +199,17 @@ figure img {
   justify-items: flex-start;
   align-items: center;
   height: 110px;
+}
+
+.more-properties {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: space-between;
+}
+
+.more-properties h3, .more-properties .btn {
+  flex-basis: 100%;
+  text-align: center;
+  width: max-content;
 }

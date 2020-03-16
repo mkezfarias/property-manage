@@ -1,24 +1,4 @@
 <p id="notice"><%= notice %></p>
-<!--
-    t.string "kind_of_property"
-    t.string "title"
-    t.string "address"
-    t.string "map"
-    t.integer "rooms"
-    t.integer "bathrooms"
-    t.date "availability"
-    t.integer "price"
-    t.integer "fees"
-    t.integer "size"
-    t.integer "parking"
-    t.boolean "pets"
-    t.boolean "furnished"
-    t.text "description"
-    t.integer "views"
-    t.string "pictures", array: true
-    t.bigint "landlord_id"
-    t.index ["landlord_id"], name: "index_properties_on_landlord_id"
--->
 <div class='centered'>
   <main>
     <h1>
@@ -43,7 +23,10 @@
       <figure> 
         <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
       </figure>
-      <figure>  
+      <figure> 
+        <div class='more-images-cover'>
+        <p>6 more photos available</p>
+        </div> 
         <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
       </figure>
     </div>
@@ -180,15 +163,16 @@
       </div>      
     </div>
   </aside>
-  <section>
+  <%= link_to 'Edit', edit_property_path(@property) %> |
+  <%= link_to 'Back', properties_path %>
+  <section class='more-properties'>
     <h3>Similar places in City</h3>
 
-    <button>Find more places in City</button>
+    <button class='btn btn-primary'>Find more places in City</button>
   </section>
   <p>
-  <strong>Type:</strong>
-  <%= @property.kind_of_property %>
 </p>
+<!--
 <p>
   <strong>Address:</strong>
   <%= @property.address %>
@@ -205,12 +189,6 @@
     <%= image_tag(image) %>
   <% end %>
 </p>
-
-<p>
-  <strong>User:</strong>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+-->
 </div>
 
