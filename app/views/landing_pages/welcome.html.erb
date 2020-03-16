@@ -1,0 +1,53 @@
+<div class="jumbotron jumbotron-fluid bg-transparent">
+  <div class="container">
+      <h1 class="display-5 text-center ubuntu bold titulo">There's a new way to Rent in CDMX</h1>
+      <h1 class="display-5 display-xl-4 text-center ubuntu bold titulo">Find the perfect home for you.</h1>
+     <div class="container">
+      <form class="search">
+        <select id="type">
+          <option value="House">Show all</option>
+          <option value="House">House</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Shared">Shared</option>
+        </select>
+          <input type="text" placeholder="Search by location">
+          <input type="date" id="move-in" name="move-in" format="dd/mm/yy">
+          <input type="submit" value='Search'>
+     </form>
+    </div>
+  </div>
+</div>
+
+  <section class="container">
+    <h3 class="text-center"> The world is evolving, so are your rentals. </h3>
+    <p class="text-center"> Renting a house or apartment will not be a nightmare anymore.<p>
+    <div class="d-flex justify-content-around">
+      <div>
+        <div class="btn btn-primary">Benefits for tenants </div>
+        <ul>
+          <li> No security deposits </li>
+          <li> You don't need a co-signer </li>
+          <li> We take care of the paperwork </li>
+          <li> Pay online or in 7-Eleven </li>
+          <li> <a href="#"> Learn more </a> </li>    
+        </ul>    
+      </div>
+      <div class="d-inline">
+        <div class="btn btn-primary">Benefits for Landlords </div>
+        <ul>
+          <li> Get your payments on time every month</li>
+          <li> Rent your properties faster and easier</li>
+          <li> We screen tenants for credit checks and legal status </li>
+          <li> We handle collections and evictions </li>
+          <li> We take care of repairs for damages caused by tenants </li>
+          <li> <a href="#"> Learn more </a> </li>
+        </ul>
+      </div>
+   </section>
+
+   <section class="container">
+   <h3> Latest listings </h3>
+    <%# @latest.each do |property| %>
+      <%= render 'card' %>
+    <%# end %>
+   </section>

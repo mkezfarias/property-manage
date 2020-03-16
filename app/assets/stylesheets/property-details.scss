@@ -1,0 +1,53 @@
+body {
+  height: 100vh;
+}
+
+.centered {
+  width: 1216px;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centered main {
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  display: flex;
+  padding-top: 11px;
+}
+
+.breadcrumbs span {
+  display: inline-block;
+}
+
+.breadcrumbs + span {
+  margin: 0 5px;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: 615px repeat(2, 305px);
+  grid-template-rows: repeat(2, 202px);
+}
+
+.pictures figure {
+  overflow: hidden;
+}
+
+.pictures figure:first-child {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  width: 100%;
+  height: 100%;
+}
+
+figure img {
+  height: 100%;
+}
