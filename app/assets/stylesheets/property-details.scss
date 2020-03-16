@@ -1,0 +1,215 @@
+body {
+  height: 100vh;
+}
+
+.centered {
+  width: 1216px;
+  height: 100%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centered main {
+  box-sizing: border-box;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumbs {
+  display: flex;
+  padding-top: 11px;
+}
+
+.breadcrumbs span {
+  display: inline-block;
+}
+
+.breadcrumbs + span {
+  margin: 0 5px;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: 615px repeat(2, 305px);
+  grid-template-rows: repeat(2, 202px);
+  grid-gap: 2px;
+}
+
+.pictures figure {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.pictures figure:first-child {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+figure img {
+  height: 100%;
+  transform-origin: center;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+.more-images-cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000044;
+  z-index: 10;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures img:hover, .pictures .more-images-cover:hover + img {
+  transform: scale(1.1);
+}
+
+aside {
+  width: 100%;
+}
+.pictures {
+  margin: 24px 0;
+}
+
+.details-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.details-buttons button {
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 75px;
+  width: 103px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.description ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description ul li {
+  flex-basis: 30%;
+}
+
+.facility-row {
+  display: flex;
+}
+
+.facility-row strong {
+  flex-basis: 25%;
+}
+
+.facility-row ul {
+  flex-basis: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.facility-row ul li, .conditions ul li {
+  flex-basis: 30%;
+}
+
+.preferred-tenant ul, .conditions ul {
+  padding: 0;
+}
+
+.preferred-tenant li, .conditions li {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.preferred-tenant li span, .conditions li span {
+  display: inline-block;
+  text-align: left;
+  flex-basis: 50%;
+}
+
+.landloard {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.landlord-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: 345px;
+  width: 254px;
+  border: 1px solid 
+  lightgray;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.landloard-face {
+  flex-basis: 70%;
+  padding: 20px;
+  text-align: center;
+}
+
+.landloard-verified {
+  padding: 10px 20px 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-self: flex-end;
+  background-color: rgb(235, 235, 235);
+}
+
+.landlord-info {
+  width: 592px;
+  height: 345px;
+  display: flex;
+  flex-direction: column;
+}
+
+.landlord-meta {
+  display: flex;
+  width: 100%;
+  justify-items: flex-start;
+  align-items: center;
+  height: 110px;
+}
+
+.more-properties {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: space-between;
+}
+
+.more-properties h3, .more-properties .btn {
+  flex-basis: 100%;
+  text-align: center;
+  width: max-content;
+}
