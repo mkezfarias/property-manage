@@ -4,10 +4,14 @@
     <h1>
       <%= @property.title %>
     </h1>
+    <!--
     <div class='breadcrumbs'>
       <span>Icon > </span>
       <span> State > </span>
       <span> <%= @property.kind_of_property %> > </span>
+      <span> <%= @property.address%> </span>
+    </div>
+    --> 
       <span> City</span>
     </div>
     <div class='pictures'>
@@ -34,30 +38,35 @@
       <button>11 photos</button>
       <button>map</button>
     </div>
-    <div class='description'>
-      <ul>
-        <li><i></i>Entire apartment</li>
-        <li><i></i>Property: 115 m2</li>
-        <li><i></i>Furnished</li>
-        <li><i></i>Registration not possible</li>
-        <li><i></i>Space for 1 person</li>
-        <li><i></i>3 bedrooms</li>
-      </ul>
-      <p>
-      Big and beautiful apartment in Santos area near the river, lot's of light, bright and modern. All furnished, one bathroom, 2nd floor no lift. No students. No sharing  rooms or flat. No smoking. No pets. No sublet rooms. Families and expats welcome.
-      </p>
-    </div>
   </main>
-
   <aside>
-    <div class='facilities'>
-      <div class='facility-row'>
+  <div class='description listing-section'>
+    <h3>Property's features</h3>
+    <p>Take a look at this property's best features</p>
+      <ul class="property-features-list">
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/surface.png"/><strong> 115 m2</strong></li>
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/cat-footprint.png" alt="paw icon"/><strong>  Pet Friendly</strong></li>
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/washing-machine.png"/><strong> Washing Machine</strong></li>
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/outdoor-swimming-pool.png"/><strong> Swimming Pool</strong></li>
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/parking.png"/><strong> Garage</strong></li>
+        <li class="property-features-list-item"><img src="https://img.icons8.com/officel/80/000000/cooling.png"/><strong> Air-conditioner</></strong></li>
+      </ul>
+      </div>
+      <hr>
+      <div>
+    <h3>Description</h3> 
+    <p><%= @property.description%></p>
+    </div>
+    <hr>
+    <div class='facilities listing-section'>
+    <h3>Details</h3>
+      <div class='facility-item'>
         <strong>
         Bedroom
         </strong>
         <ul>
           <li>
-          Number of bedrooms <span>2</span>
+          Number of bedrooms: <span>2</span>
           </li>
           <li>
           Bedroom furnished
@@ -67,22 +76,22 @@
           </li>
         </ul>
       </div>
-      <div class='facility-row'>
+      <div class='facility-item'>
         <strong>
         Areas
         </strong>
         <ul>
           <li>
-          Kitchen <span>Private</span>
+          Kitchen: <span>Private</span>
           </li>
           <li>
-          Bathroom <span>Private</span>
+          Bathroom: <span>Private</span>
           </li>
           <li>
-          Toilet <span>Private</span>
+          Toilet: <span>Private</span>
           </li>
           <li>
-          Living room <span>Private</span>
+          Living room: <span>Private</span>
           </li>
           <li>
           Balcony/Terrace
@@ -105,47 +114,51 @@
         </ul>
       </div>
     </div>
-    <div class='preferred-tenant'>
+      <hr>
+    <div class='preferred-tenant listing-section'>
       <h3>Preferred tenant</h3>
       <ul>
-        <li><span>Age: </span><span>No preference</span></li>
-        <li><span>Gender: </span><span>No preference</span></li>
-        <li><span>Tenant type: </span><span>No preference</span></li>
-        <li><span>Suitable for couples: </span><span>No preference</span></li>
+        <li>Age: <span>No preference</span></li>
+        <li>Gender: <span>No preference</span></li>
+        <li>Tenant type: <span>No preference</span></li>
+        <li>Suitable for couples: <span>No preference</span></li>
       </ul>
+      <hr>
     </div>
-    <div class='availability'>
+    <div class='availability listing-section'>
       <h3>Availability</h3>
       <time>16/03/2020</time>
+      <hr>
     </div>
-    <div class='conditions'>
+    <div class='conditions listing-section'>
       <h3>Rental conditions</h3>
       <ul>
-        <li><span>First month's rent</span><span>€1750 +€250 (One time service fee)</span></li>
-        <li><span>including HousingAnywhere fee</span></li>
+        <li>First month's rent: <span>€1750 +€250 (One time service fee)</span></li>
+        <li>including Housing: <span>Anywhere fee</span></li>
 
-        <li><span>Monthly rent</span><span>€1750</span></li>
-        <li><span>Paid later to the advertiser</span></li>
+        <li>Monthly rent: <span>€1750</span></li>
+        <li>Paid later to: <span> the advertiser</span></li>
 
-        <li><span>Bills</span><span>Water: not included</span></li>
-        <li><span></span><span>Gas: included</span></li>
-        <li><span></span><span>Electricity: included</span></li>
-        <li><span></span><span>Internet: not included</span></li>
+        <li>Water: <span>not included</span></li>
+        <li>Gas: <span>included</span></li>
+        <li>Electricity: <span>included</span></li>
+        <li>Internet: <span>not included</span></li>
 
-        <li><span>Estimated bills</span><span>€125</span></li>
+        <li>Estimated bills: <span>€125</span></li>
       </ul>
+      <hr>
     </div>
 
-    <div class='landloard'>
+    <div class='landlord listing-section'>
       <div class='landlord-card'>
-        <div class='landloard-face'>
+        <div class='landlord-face'>
           <img src=''>
           <strong>
             <%= @property.landlord.first_name %>
           </strong>
           <p>Last seen today</p>
         </div>
-        <div class='landloard-verified'>
+        <div class='landlord-verified'>
           <p>Phone number verified</p>
           <p>Email verified</p>
         </div>
@@ -163,7 +176,7 @@
       </div>      
     </div>
   </aside>
-  <%= link_to 'Edit', edit_property_path(@property) %> |
+  <!-- <%= link_to 'Edit', edit_property_path(@property) %> -->
   <%= link_to 'Back', properties_path %>
   <section class='more-properties'>
     <h3>Similar places in City</h3>
