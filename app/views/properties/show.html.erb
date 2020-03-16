@@ -4,12 +4,14 @@
     <h1>
       <%= @property.title %>
     </h1>
+    <!--
     <div class='breadcrumbs'>
       <span>Icon > </span>
       <span> State > </span>
       <span> <%= @property.kind_of_property %> > </span>
-      <span> City</span>
+      <span> <%= @property.address%> </span>
     </div>
+    --> 
     <div class='pictures'>
       <figure>
         <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
@@ -129,18 +131,18 @@
     <div class='conditions listing-section'>
       <h3>Rental conditions</h3>
       <ul>
-        <li>First month's rent<span>€1750 +€250 (One time service fee)</span></li>
-        <li>including HousingAnywhere fee</span></li>
+        <li>First month's rent: <span>€1750 +€250 (One time service fee)</span></li>
+        <li>including Housing: <span>Anywhere fee</span></li>
 
-        <li>Monthly rent<span>€1750</span></li>
-        <li>Paid later to the advertiser</span></li>
+        <li>Monthly rent: <span>€1750</span></li>
+        <li>Paid later to: <span> the advertiser</span></li>
 
-        <li>Bills<span>Water: not included</span></li>
-        <li><span>Gas: included</span></li>
-        <li><span>Electricity: included</span></li>
-        <li><span>Internet: not included</span></li>
+        <li>Water: <span>not included</span></li>
+        <li>Gas: <span>included</span></li>
+        <li>Electricity: <span>included</span></li>
+        <li>Internet: <span>not included</span></li>
 
-        <li>Estimated bills<span>€125</span></li>
+        <li>Estimated bills: <span>€125</span></li>
       </ul>
       <hr>
     </div>
@@ -172,7 +174,7 @@
       </div>      
     </div>
   </aside>
-  <%= link_to 'Edit', edit_property_path(@property) %> |
+  <!-- <%= link_to 'Edit', edit_property_path(@property) %> -->
   <%= link_to 'Back', properties_path %>
   <section class='more-properties'>
     <h3>Similar places in City</h3>
