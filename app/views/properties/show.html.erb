@@ -68,7 +68,7 @@
 
   <aside>
     <div class='facilities'>
-      <div>
+      <div class='facility-row'>
         <strong>
         Bedroom
         </strong>
@@ -84,7 +84,7 @@
           </li>
         </ul>
       </div>
-      <div>
+      <div class='facility-row'>
         <strong>
         Areas
         </strong>
@@ -154,26 +154,26 @@
     </div>
 
     <div class='landloard'>
-      <div>
-        <div>
+      <div class='landlord-card'>
+        <div class='landloard-face'>
           <img src=''>
           <strong>
             <%= @property.landlord.first_name %>
           </strong>
           <p>Last seen today</p>
         </div>
-        <div>
+        <div class='landloard-verified'>
           <p>Phone number verified</p>
           <p>Email verified</p>
         </div>
       </div>
-      <div>
+      <div class='landlord-info'>
         <h3>
           <%= @property.landlord.first_name %>
         </h3>
         <p>Response rate: 100%</p>
         <p>Response time: within a few hours</p>
-        <div>
+        <div class='landlord-meta'>
           <p>Member since April 2019</p>
           <p>2 lisitngs</p>
         </div>
