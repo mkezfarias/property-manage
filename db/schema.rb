@@ -74,7 +74,8 @@ ActiveRecord::Schema.define(version: 2020_03_15_130054) do
     t.text "description"
     t.integer "views"
     t.string "pictures", array: true
-    t.integer "landlord_id"
+    t.bigint "landlord_id"
+    t.index ["landlord_id"], name: "index_properties_on_landlord_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,4 +104,5 @@ ActiveRecord::Schema.define(version: 2020_03_15_130054) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "properties"
   add_foreign_key "contracts", "properties"
+  add_foreign_key "properties", "users", column: "landlord_id"
 end

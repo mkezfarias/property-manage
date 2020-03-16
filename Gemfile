@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
+gem 'bootstrap', '~> 4.3.1'
+gem 'sprockets-rails', '>=3.2.0'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use postgresql as the database for Active Record
@@ -9,6 +12,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails', '>=3.2.0'
 gem 'jquery-rails'
+gem 'algoliasearch-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

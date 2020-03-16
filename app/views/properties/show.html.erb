@@ -1,15 +1,178 @@
 <p id="notice"><%= notice %></p>
+<div class='centered'>
+  <main>
+    <h1>
+      <%= @property.title %>
+    </h1>
+    <div class='breadcrumbs'>
+      <span>Icon > </span>
+      <span> State > </span>
+      <span> <%= @property.kind_of_property %> > </span>
+      <span> City</span>
+    </div>
+    <div class='pictures'>
+      <figure>
+        <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
+      </figure> 
+      <figure>
+        <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
+      </figure>
+      <figure>  
+        <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
+      </figure> 
+      <figure> 
+        <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
+      </figure>
+      <figure> 
+        <div class='more-images-cover'>
+        <p>6 more photos available</p>
+        </div> 
+        <img src='https://thumb.housinganywhere.com/v2/images/room/1496236/9c9d26ed-148e-41ca-87ec-97ebdd4fdd9e.jpg?nocrop=1&rotate=0&kind=large-retina'>
+      </figure>
+    </div>
+    <div class='details-buttons'>
+      <button>11 photos</button>
+      <button>map</button>
+    </div>
+    <div class='description'>
+      <ul>
+        <li><i></i>Entire apartment</li>
+        <li><i></i>Property: 115 m2</li>
+        <li><i></i>Furnished</li>
+        <li><i></i>Registration not possible</li>
+        <li><i></i>Space for 1 person</li>
+        <li><i></i>3 bedrooms</li>
+      </ul>
+      <p>
+      Big and beautiful apartment in Santos area near the river, lot's of light, bright and modern. All furnished, one bathroom, 2nd floor no lift. No students. No sharing  rooms or flat. No smoking. No pets. No sublet rooms. Families and expats welcome.
+      </p>
+    </div>
+  </main>
 
-<p>
-  <strong>Type:</strong>
-  <%= @property.kind_of_property %>
+  <aside>
+    <div class='facilities'>
+      <div class='facility-row'>
+        <strong>
+        Bedroom
+        </strong>
+        <ul>
+          <li>
+          Number of bedrooms <span>2</span>
+          </li>
+          <li>
+          Bedroom furnished
+          </li>
+          <li>
+          Lock on bedroom 
+          </li>
+        </ul>
+      </div>
+      <div class='facility-row'>
+        <strong>
+        Areas
+        </strong>
+        <ul>
+          <li>
+          Kitchen <span>Private</span>
+          </li>
+          <li>
+          Bathroom <span>Private</span>
+          </li>
+          <li>
+          Toilet <span>Private</span>
+          </li>
+          <li>
+          Living room <span>Private</span>
+          </li>
+          <li>
+          Balcony/Terrace
+          </li>
+          <li>
+          Garden
+          </li>
+          <li>
+          Basement
+          </li>
+          <li>
+          Parking
+          </li>
+          <li>
+          Wheelchair accessible
+          </li>
+          <li>
+          Allergy friendly
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='preferred-tenant'>
+      <h3>Preferred tenant</h3>
+      <ul>
+        <li><span>Age: </span><span>No preference</span></li>
+        <li><span>Gender: </span><span>No preference</span></li>
+        <li><span>Tenant type: </span><span>No preference</span></li>
+        <li><span>Suitable for couples: </span><span>No preference</span></li>
+      </ul>
+    </div>
+    <div class='availability'>
+      <h3>Availability</h3>
+      <time>16/03/2020</time>
+    </div>
+    <div class='conditions'>
+      <h3>Rental conditions</h3>
+      <ul>
+        <li><span>First month's rent</span><span>€1750 +€250 (One time service fee)</span></li>
+        <li><span>including HousingAnywhere fee</span></li>
+
+        <li><span>Monthly rent</span><span>€1750</span></li>
+        <li><span>Paid later to the advertiser</span></li>
+
+        <li><span>Bills</span><span>Water: not included</span></li>
+        <li><span></span><span>Gas: included</span></li>
+        <li><span></span><span>Electricity: included</span></li>
+        <li><span></span><span>Internet: not included</span></li>
+
+        <li><span>Estimated bills</span><span>€125</span></li>
+      </ul>
+    </div>
+
+    <div class='landloard'>
+      <div class='landlord-card'>
+        <div class='landloard-face'>
+          <img src=''>
+          <strong>
+            <%= @property.landlord.first_name %>
+          </strong>
+          <p>Last seen today</p>
+        </div>
+        <div class='landloard-verified'>
+          <p>Phone number verified</p>
+          <p>Email verified</p>
+        </div>
+      </div>
+      <div class='landlord-info'>
+        <h3>
+          <%= @property.landlord.first_name %>
+        </h3>
+        <p>Response rate: 100%</p>
+        <p>Response time: within a few hours</p>
+        <div class='landlord-meta'>
+          <p>Member since April 2019</p>
+          <p>2 lisitngs</p>
+        </div>
+      </div>      
+    </div>
+  </aside>
+  <%= link_to 'Edit', edit_property_path(@property) %> |
+  <%= link_to 'Back', properties_path %>
+  <section class='more-properties'>
+    <h3>Similar places in City</h3>
+
+    <button class='btn btn-primary'>Find more places in City</button>
+  </section>
+  <p>
 </p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @property.title %>
-</p>
-
+<!--
 <p>
   <strong>Address:</strong>
   <%= @property.address %>
@@ -26,11 +189,6 @@
     <%= image_tag(image) %>
   <% end %>
 </p>
+-->
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @property.landlord.first_name %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
