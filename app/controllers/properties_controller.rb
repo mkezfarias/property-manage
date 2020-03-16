@@ -4,7 +4,11 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    if !params[:property][:query].empty?
+      @properties = Property.algolia_search(query_params)
+    else
+      @properties = Property.all
+    end
   end
 
   # GET /properties/1
@@ -70,5 +74,9 @@ class PropertiesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def property_params
     params.require(:property).permit(:kind_of_property, :title, :address, :map, :pictures, prop_images: [])
+  end
+
+  def query_params
+    params.require(:property).permit(:query)
   end
 end

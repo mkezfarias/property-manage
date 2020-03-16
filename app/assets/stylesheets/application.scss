@@ -37,7 +37,15 @@
    color: #6c757d !important;
  }
 
-
+.search-form {
+  .form-fields {
+    height: 42px;
+    flex: 0 auto;
+    border: solid 1px #e7b8d3;
+    border-radius: 11px;
+    background-color: #fff8f8;
+  }  
+ }
 
  .logoror {
     height: 40px !important;   
@@ -71,6 +79,13 @@
   color: #ab1993;
   font-size: calc(10px + 3vw) ;
 }
+
+.carousel-main {
+  div {
+    margin: 0 10px 0 10px;
+  }
+}
+
    
 // Variables
 //
