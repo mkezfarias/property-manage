@@ -1,0 +1,32 @@
+.benefits {
+
+  &-card {
+    width: 18rem;
+
+    
+  }
+
+
+}
+
+.tenant{
+  top: 250px;
+  color: #4b4b4b;
+}
+
+.left {
+  left: 90px;
+}
+
+.right {
+  right: 90px;
+}
+
+.main-bg {
+  height: 50vh;
+  
+  &-tenant {
+    background: url(https://images.unsplash.com/photo-1581573950452-5a438c5f390f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1315&q=80) no-repeat 50%;
+  }
+}
+  
