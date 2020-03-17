@@ -8,8 +8,8 @@ class Property < ApplicationRecord
 
   has_many_attached :prop_images
 
-  algoliasearch do
+  #algoliasearch do
     # Sending 3 model attributes
-    attributes :address, :price, :kind_of_property
+  #  attributes :address, :price, :kind_of_property
   end
 end
