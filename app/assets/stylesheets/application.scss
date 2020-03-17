@@ -181,14 +181,4 @@ $theme-colors: map-merge(
   $theme-colors  
 );
 
-@import "../node_modules/rfs/scss";
-
- // Custom bootstrap variables must be set or imported *before* bootstrap.
-.title-rfs {
-  @include rfs(64);
-  padding-top: .75em;
-  line-height: 1.4;
-  margin: 0;
-}
-
 @import "bootstrap";
