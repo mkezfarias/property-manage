@@ -11,5 +11,5 @@ class Property < ApplicationRecord
   #algoliasearch do
     # Sending 3 model attributes
   #  attributes :address, :price, :kind_of_property
-  end
+  #end
 end
