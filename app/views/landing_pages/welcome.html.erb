@@ -5,7 +5,7 @@
   <div class="container search-container">
 <%= form_for :property, url: '/properties/', method: 'GET', autocomplete: 'off'  do |f| %>
   <div class="formField" style="position: relative">
-    <%= f.text_field :query, id: 'search_string', autocomplete: 'off' %>
+    <%= f.text_field :query, required: true, id: 'search_string', autocomplete: 'off' %>
     <div id='click-catcher' class='click-catcher hidden'></div>
     <div id='dropDownOpts' class='dropDownOpts hidden'>
       <option class='hidden'></option>
