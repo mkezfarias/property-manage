@@ -1,92 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- .card {
-   font-family: ubuntu;
-  .card-body {
-    a {
-     text-decoration: none !important;
-     color: #4b4b4b !important;
-     :hover {
-       text-decoration: none;
-       color: #4b4b4b;
-    }
-   }
-  }
-  .price{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    align-self: flex-end;
-  }
- }
-
- .card-txt-format {
-   color: #6c757d !important;
- }
-
-.search-form {
-  .form-fields {
-    height: 42px;
-    flex: 0 auto;
-    border: solid 1px #e7b8d3;
-    border-radius: 11px;
-    background-color: #fff8f8;
-  }  
- }
-
- .logoror {
-    height: 40px !important;   
-   }
-   
-   .h7 {
-    font-size: 12px;
-   }
-   
-   .bg-blueish.bg-blueish {
-     background-color: #6610f2;
-   }
-   
-   .btn-grad.btn-grad  {
-     background-image: linear-gradient(47deg, #6610f2, #217aee 92%, #ffafec 98%, #fff);
-     color: white;
-     box-shadow: 1px 1px 3px 0 #089;
-     border-radius: 10px;
-     opacity: 0.72;
-   }
-   
-   .ubuntu {
-     font-family: 'Ubuntu', sans-serif;
-   }
-   
-   .bold {
-     font-weight: 700 !important;
-   }
-   
-.titulo.titulo {
-  color: #ab1993;
-  font-size: calc(10px + 3vw) ;
-}
-
-.carousel-main {
-  div {
-    margin: 0 10px 0 10px;
-  }
-}
-
-   
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -105,8 +16,6 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
-
-
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
@@ -127,7 +36,7 @@ $grays: map-merge(
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
+$pink:    #ab1993 !default;
 $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
@@ -181,4 +90,114 @@ $theme-colors: map-merge(
   $theme-colors  
 );
 
+<<<<<<< HEAD
 @import "bootstrap";
+=======
+@import "../node_modules/rfs/scss";
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+.title-rfs {
+  @include rfs(64);
+  padding-top: .75em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@import "bootstrap";
+
+
+.card {
+  font-family: ubuntu;
+  &-body {
+    a {
+     text-decoration: none !important;
+     color: #4b4b4b !important;
+     :hover {
+       text-decoration: none;
+       color: #4b4b4b;
+    }
+   }
+  }
+
+  &-link {
+    height: 20px;
+  }
+
+  .price{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-self: flex-end;
+  }
+ }
+
+  .card-txt-format {
+   color: #6c757d !important;
+ }
+
+.search-form {
+  .form-fields {
+    height: 42px;
+    flex: 0 auto;
+    border: solid 1px #e7b8d3;
+    border-radius: 11px;
+    background-color: #fff8f8;
+  }  
+ }
+
+ .search-input {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 40px;
+    width: 300px;
+ }
+
+ .benefits {
+    h3 a, 
+    &-h1 {
+      color: $pink;
+    }
+
+    ul {
+      padding-inline-start: 20px;
+    }
+}
+
+ .logoror {
+    height: 40px !important;   
+   }
+   
+   .h7 {
+    font-size: 12px;
+   }
+   
+   .bg-blueish.bg-blueish {
+     background-color: $indigo;
+   }
+   
+   .btn-grad.btn-grad  {
+     background-image: linear-gradient(47deg, #6610f2, #217aee 92%, #ffafec 98%, #fff);
+     color: white;
+     box-shadow: 1px 1px 3px 0 #089;
+     border-radius: 5px;
+     opacity: 0.72;
+   }
+   
+   .ubuntu {
+     font-family: 'Ubuntu', sans-serif;
+   }
+   
+   .bold {
+     font-weight: 700 !important;
+   }
+   
+.titulo.titulo {
+  color: $pink;
+  font-size: calc(10px + 3vw) ;
+}
+
+.carousel-main {
+  div {
+    margin: 0 10px 0 10px;
+  }
+}
+>>>>>>> b03103802b5d963730b0b418ba0d6b41cb49e037
