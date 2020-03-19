@@ -2,56 +2,57 @@
   <h1 class="display-5 text-center ubuntu bold titulo">There's a new way to Rent in CDMX</h1>
   <h1 class="display-5 display-xl-4 text-center ubuntu bold titulo">Find the perfect home for you.</h1>
   <div class="container">
-  <div class="container search-container">
-<%= form_for :property, url: '/properties/', method: 'GET', autocomplete: 'off'  do |f| %>
-  <div class="formField" style="position: relative">
-    <%= f.text_field :query, required: true, id: 'search_string', autocomplete: 'off' %>
-    <div id='click-catcher' class='click-catcher hidden'></div>
-    <div id='dropDownOpts' class='dropDownOpts hidden'>
-      <option class='hidden'></option>
-      <option class='hidden'></option>
-      <option class='hidden'></option>
-      <option class='hidden'></option>
-      <option class='hidden'></option>
+    <div class="container search-container">
+      <%= form_for :property, url: '/properties/', method: 'GET', autocomplete: 'off'  do |f| %>
+        <div class="formField" style="position: relative">
+          <%= f.text_field :query, required: true, id: 'search_string', autocomplete: 'off' %>
+          <div id='click-catcher' class='click-catcher hidden'></div>
+          <div id='dropDownOpts' class='dropDownOpts hidden'>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+          </div>
+        </div>
+        <%= f.submit 'Search', class: 'search_btn btn btn-primary' %>
+      <% end %>
     </div>
   </div>
-  <%= f.submit 'Search', class: 'search_btn btn btn-primary' %>
-<% end %>
-</div>
-  </div>
-    </div>
 </div>
 
   <section class="container">
     <h3 class="text-center"> The world is evolving, so are your rentals. </h3>
     <p class="text-center"> Renting a house or apartment will not be a nightmare anymore.<p>
-    <div class="d-flex justify-content-around">
-      <div>
-        <div class="btn btn-primary">Benefits for tenants </div>
+    <div class="d-flex justify-content-around mt-5">
+      <div class=" benefits benefits-tenants">
+        <%# <div class="btn btn-primary">Benefits for tenants </div> %>
+        <h3> <%= link_to "Benefits for Tenants", "/landing_pages/tenant" %> </h3>
         <ul>
           <li> No security deposits </li>
           <li> You don't need a co-signer </li>
           <li> We take care of the paperwork </li>
           <li> Pay online or in 7-Eleven </li>
-          <li> <a href="#"> Learn more </a> </li>    
+          <li> <%= link_to "Learn more", "/landing_pages/tenant" %>  </li>    
         </ul>    
       </div>
-      <div class="d-inline">
-        <div class="btn btn-primary">Benefits for Landlords </div>
+      <div class="d-inline benefits benefits-landlords">
+        <%# <div class="btn btn-primary">Benefits for Landlords </div> %>
+        <h3> <%= link_to "Benefits for Landlords", "/landing_pages/landlord" %> </h3>
         <ul>
           <li> Get your payments on time every month</li>
           <li> Rent your properties faster and easier</li>
           <li> We screen tenants for credit checks and legal status </li>
           <li> We handle collections and evictions </li>
           <li> We take care of repairs for damages caused by tenants </li>
-          <li> <a href="#"> Learn more </a> </li>
+          <li> <%= link_to "Learn more", "/landing_pages/tenant" %>  </li>
         </ul>
       </div>
    </section>
 
-   <section class="container">
+   <section class="container mt-5">
    <h3> Latest listings </h3>
-     <div class="d-flex  justify-content-between bd-highlight">
+     <div class="d-flex justify-content-between bd-highlight mt-3">
     <%= render partial: 'card', collection: @latests %>
     </div>
    </section>
