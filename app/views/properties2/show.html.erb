@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @property.kind_of_property %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @property.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @property.map %>
+</p>
+
+<p>
+  <strong>Pictures:</strong>
+  <% @property.prop_images.each do |image| %>
+    <%= image_tag(image) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @property.landlord.first_name %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
