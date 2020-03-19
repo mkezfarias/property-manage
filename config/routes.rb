@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   get 'landing_pages/welcome'
   get 'landing_pages/about'
