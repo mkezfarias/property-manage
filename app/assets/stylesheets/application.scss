@@ -144,7 +144,8 @@ $theme-colors: map-merge(
  }
 
  .benefits {
-    h3 a {
+    h3 a, 
+    &-h1 {
       color: $pink;
     }
 
