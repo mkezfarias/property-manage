@@ -1,35 +1,22 @@
 <div class="jumbotron jumbotron-fluid bg-transparent">
+  <h1 class="display-5 text-center ubuntu bold titulo">There's a new way to Rent in CDMX</h1>
+  <h1 class="display-5 display-xl-4 text-center ubuntu bold titulo">Find the perfect home for you.</h1>
   <div class="container">
-      <h1 class="display-5 text-center ubuntu bold titulo">There's a new way to Rent in CDMX</h1>
-      <h1 class="display-5 display-xl-4 text-center ubuntu bold titulo">Find the perfect home for you.</h1>
-     <div class="container text-center p-3 m-3">
-
-     <div class="container">
-      <div id="autocomplete"></div>
-    </div>
-
-<%= form_for :property, url: '/properties/', method: 'GET' do |f| %>
-  <div class="field">
-    <%= f.text_field :query %>
-    <%= f.submit 'Search' %>
-  </div>
-<% end %>
-
-
-
-
-<!--
-      <form class="search">
-      <input type="text" placeholder="Search by location">
-        <select id="type">
-          <option value="House">All types</option>
-          <option value="House">House</option>
-          <option value="Apartment">Apartment</option>
-          <option value="Shared">Shared</option>
-        </select>
-        <input type="submit" value='Search' class="btn btn-secondary" >
-     </form>
--->
+    <div class="container search-container">
+      <%= form_for :property, url: '/properties/', method: 'GET', autocomplete: 'off'  do |f| %>
+        <div class="formField" style="position: relative">
+          <%= f.text_field :query, required: true, id: 'search_string', autocomplete: 'off' %>
+          <div id='click-catcher' class='click-catcher hidden'></div>
+          <div id='dropDownOpts' class='dropDownOpts hidden'>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+            <option class='hidden'></option>
+          </div>
+        </div>
+        <%= f.submit 'Search', class: 'search_btn btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -69,3 +56,5 @@
     <%= render partial: 'card', collection: @latests %>
     </div>
    </section>
+<script>
+</script>
