@@ -1,4 +1,3 @@
-console.log('required')
 window.onload = () => {
   (function () {
     const searchInp = document.getElementById('search_string');

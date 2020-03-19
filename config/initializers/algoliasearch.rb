@@ -1,4 +1,4 @@
   AlgoliaSearch.configuration = {
-    application_id: Rails.application.credentials.algolia[:application_id],
-    api_key: Rails.application.credentials.algolia[:api_key] 
+    application_id: '1XZKX6MEB2',
+    api_key: '9c5fcdcbf41205a291a35353fd24ccad'
   }
