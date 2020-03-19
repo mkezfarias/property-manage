@@ -1,5 +1,3 @@
-require 'json'
-
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[show edit update destroy]
 
@@ -10,25 +8,6 @@ class PropertiesController < ApplicationController
       @properties = Property.algolia_search(query_params)
     else
       @properties = Property.all
-    end
-  end
-
-  def auto_complete
-    str = params[:str]
-    result = Property.search(str).take(5).uniq
-
-    if result
-      auto_com = []
-      result.each do |prop|
-        auto_com << prop.address
-      end
-      respond_to do |format|
-        format.json { render json: auto_com.to_json }
-      end
-    else
-      respond_to do |format|
-        format.json { render json: json_format([]) }
-      end
     end
   end
 

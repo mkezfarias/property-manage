@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require autocomplete
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -19,5 +18,3 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require algolia/v3/algoliasearch.min
-
-required('./autocomplete')
