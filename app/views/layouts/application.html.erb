@@ -7,7 +7,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,700&display=swap" rel="stylesheet">
-
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.0/themes/algolia.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/css/selectize.css">
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/app.css">
   </head>
 
   <body>
@@ -15,5 +19,93 @@
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
+
+
+
+    <script>
+    
+    function hitTemplate(hit) {
+    return `
+      <div class="hit">
+        <div class="hit-image">
+          <img src="${hit.image}" />
+        </div>
+        <div class="hit-content">
+          <div>
+            <div class="hit-name">${hit._highlightResult.name.value}</div>
+            <div class="hit-description">${
+              hit._snippetResult.description.value
+            }</div>
+          </div>
+          <div class="hit-price">${hit.price}</div>
+        </div>
+      </div>
+    `;
+  }
+
+const search = instantsearch({
+  appId: "1XZKX6MEB2",  
+  apiKey: "bf77b3fd471c6b6a50dbc0e6234607c0",
+  indexName: "demo_ecommerce",
+  searchParameters: {
+    hitsPerPage: 5,
+    attributesToSnippet: ["description:24"],
+    snippetEllipsisText: " [...]"
+  }
+});
+
+// Uncomment the following widget to add a search bar.
+
+ search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: "#searchbox",
+    placeholder: "Busca por ciudad, Delegacion, Colonia",
+    autofocus: true
+  })
+); 
+
+// Uncomment the following widget to add search stats.
+
+ search.addWidget(
+  instantsearch.widgets.stats({
+    container: "#stats",
+    templates: {
+      body(hit) {
+        return `<span role="img" aria-label="emoji">⚡️</span> <strong>${hit.nbHits}</strong> results found ${
+          hit.query != "" ? `for <strong>"${hit.query}"</strong>` : ``
+        } in <strong>${hit.processingTimeMS}ms</strong>`;
+      }
+    }
+  })
+); 
+
+// Uncomment the following widget to add price range.
+
+search.addWidget(
+  instantsearch.widgets.rangeSlider({
+    container: "#price",
+    autoHideContainer: false,
+    attributeName: "price",
+    templates: {
+      header: "Price"
+    }
+  })
+); 
+
+// Uncomment the following widget to add pagination.
+
+search.addWidget(
+  instantsearch.widgets.pagination({
+    container: "#pagination"
+  })
+);
+
+search.start();
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.30.0/dist/algoliasearchLite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@^4.0.0"></script>
   </body>
 </html>
