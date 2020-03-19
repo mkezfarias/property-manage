@@ -90,9 +90,6 @@ $theme-colors: map-merge(
   $theme-colors  
 );
 
-<<<<<<< HEAD
-@import "bootstrap";
-=======
 @import "../node_modules/rfs/scss";
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 .title-rfs {
@@ -200,4 +197,3 @@ $theme-colors: map-merge(
     margin: 0 10px 0 10px;
   }
 }
->>>>>>> b03103802b5d963730b0b418ba0d6b41cb49e037
