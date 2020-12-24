@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_130054) do
+ActiveRecord::Schema.define(version: 2020_03_19_193829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,24 @@ ActiveRecord::Schema.define(version: 2020_03_15_130054) do
     t.integer "views"
     t.string "pictures", array: true
     t.bigint "landlord_id"
+    t.string "type"
+    t.string "street_name"
+    t.integer "house_number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "municipality"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "lease"
+    t.float "security_deposit"
+    t.float "min_lease"
+    t.boolean "verified"
+    t.boolean "gated"
+    t.string "rules", array: true
+    t.string "perks", array: true
+    t.string "close_to", array: true
+    t.boolean "has_contract"
+    t.integer "visits_count"
     t.index ["landlord_id"], name: "index_properties_on_landlord_id"
   end
 
